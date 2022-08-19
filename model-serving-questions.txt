@@ -1,0 +1,21 @@
+1. What is the definition of a serverless application?
+	- a cloud-native development model that allows developers to build and run applications without having to manage servers.
+	- there are still servers in a server less environment, but they are abstracted away so that the developers can focus on their code instead of their server(s) needs.
+	- Tasks such as load balancing, scaling, logging and monitoring are all done by the cloud provider.
+
+2. What is the definition of model serving and what are the two types?
+	- Deploying a model in a way that a server can "serve" that application correctly
+	- The two types: batch and online
+	- Batch: you feed the model, typically as a scheduled job, with a large amount of data and write the output to a table
+	- Online: deploy the model with an endpoint so applications can send requests to the model and get a fast response at low latency
+
+3. What are 3 advantages of deploying using Model Serving methods Vs. deploying on GitHub pages or HuggingFace for free?
+	- Your website will have more flexibility on how it can be run (i.e. a Pages deployment would be static and not as adaptable to user inputs)
+	- Model serving architectures provide error handling and issue management attributes for models, whereas Pages does not (although they have a community that can help)
+	- Model serving methods allow for more command over the application workflow, whereas Pages determines some settings for you such as cache-control and the strategies behind caching (which is very important for models)
+
+4. What is Machine Learning Inference? How does Machine Learning Inference work? Walk-through an example.
+	- The process of running data points into a ML model to calculate an output (also referred to as "operationalizing a ML model" or "putting a ML model into production")
+	- For a ML inference to work, you need 3 components: data sources, a system to host the ML model, and data destinations.
+	- Machine learning inference servers or engines execute your model algorithm and return an inference output. The inference server works by accepting input data, passing it to a trained ML model, executing the model, and returning the inference output.
+	- Example: if the ML model calculates a fraud score on purchase data, then the applications associated with the data destinations might send an "approve" or "decline" message back to the purchase site.
